@@ -1,0 +1,265 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections</title>
+    <style>
+        
+        body {
+            left: 30px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Earthy shade */
+            color: #330000; /* Maroon */
+        }
+        .navbar1 {
+    background-color: #8b0000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    top: 0;
+    z-index:1;
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .navbar-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .navbar-menu1 {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-menu-item {
+    margin-right: 10px;
+  }
+
+  .navbar-menu-item:last-child {
+    margin-right: 5vw;
+  }
+
+  ul{
+    list-style-type: none;
+  }
+  
+  .navbar-menu-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  /* Vertical Line Divider */
+  .navbar-menu-item:not(:last-child)::after {
+    content: "|";
+    margin-left: 10px;
+    color: white;
+  }
+  /*nav bar 2*/
+  .navbar {
+    background-color:#7D0A0A;
+    width: 100%;
+    overflow-x: hidden;
+    position: sticky;
+    top:13vh;
+    z-index: 2;
+   
+  }
+
+  .navbar a {
+    float: left;
+    height: 7vh;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    width: 25%; /* Four elements, so each takes 25% of the width */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .filters-section{
+            width: 15%;
+            padding: 20px;
+            border: 2px solid maroon;
+            border-radius: 5px;
+            background-color: #F3DEC8;
+        }
+        .manuscripts-section {
+            flex: 1; //Take remaining space 
+            padding: 5vh;
+            display: flex;
+            margin-left:7vw;
+            flex-wrap: wrap; // Allow manuscript boxes to wrap to next row 
+            justify-content: space-between;
+           
+        }
+        
+        .manuscript-box {
+          color: maroon;
+            width: calc(40% - 10px); //Each box occupies one-third of the available space with some spacing 
+            background-color: #fff;
+            margin-top:3vh;
+            margin-right:2vw;
+            border: 2px solid maroon;
+            border-radius: 5px;
+            padding: 2vh;
+            margin-bottom:2vh;
+            max-width:51vh;
+        }
+        
+         .larger-text {
+    font-size: 3em; /* You can adjust the value to make the text larger */
+  }
+        /* Adjustments for Filters and Manuscript Display Sections */
+.content-wrapper {
+    display: flex;
+    flex-direction: row; /* Display items in a row */
+}
+
+
+
+.filters-section {
+    
+  border: 1px solid maroon; /* Add a border to separate the sections */
+    color: maroon;
+    max-height: 35vh;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="navbar1">
+  <!-- Logo -->
+  <img src="jssate.png" style="max-width: 170px;" class="navbar-logo"></a>
+  <h1 style="text-align:center;color:white">COLLECTIONS</h1>
+  <!-- Menu Items -->
+  <ul class="navbar-menu1">
+    <li class="navbar-menu-item"><a href="index.html">HOME</a></li>
+    <li class="navbar-menu-item"><a href="sitemap.html">SITEMAP</a></li>
+    <li class="navbar-menu-item"><a href="logout.php">logout</a></li>
+  </ul>
+</div>
+<div class="navbar">
+<a href="asmanus.php">MANUSCRIPT</a>
+<a href="ascollection.php">COLLECTIONS</a>
+    <a href="asconservation.php">CONSERVATION</a>
+    <a href="asborrow.php">BORROW</a>
+  </div>
+    <!-- Heading and Introduction -->
+    <br><br><br><br><br>
+    
+
+    <!-- Left Section - Filters -->
+    <div class="content-wrapper">
+    <div class="filters-section">
+        <h2>Filters</h2>
+        <form method="POST">
+            <label for="reg">Regional Details:</label>
+            <br>
+            <select name="reg" id="reg">
+                <option value="Takshashila">Takshashila</option>
+                <option value="Kashmira Desha">Kashmira Desha</option>
+                <option value="Jamboodweepa">Jamboodweepa</option>
+                <option value="Paataliputhra">Paataliputhra</option>
+                <option value="Saraswathi Theera">Saraswathi Theera</option>
+                <option value="Karnataka">Jamboodweepa</option>
+
+            </select><br>
+            <label for="an">Author Name:</label>
+            <br>
+            <select name="an" id="an" >
+                <option value="Charaka">Charaka</option>
+                <option value="Manu">Manu</option>
+                <option value="Patanjali">Patanjali</option>
+                <option value="Panini">Panini</option>
+                <option value="Vedavyasa Badarayana">Vedavyasa Badarayana</option>
+                <option value="Shatharchin">Shatharchin</option>
+    
+            </select><br>
+            <br>
+            <button type="submit">Filter Data</button>
+           <!-- <button type="button" onclick="clearFilters()">Clear All</button>-->
+        </form>
+    </div>
+    <script>
+        function clearFilters() {
+            // Logic to clear all filters
+        }
+    </script>
+    <div class="manuscripts-section">
+    <?php
+    $servername="localhost";
+    $username="root";
+    $password="";
+    $dbname="ms";
+    
+    $conn=new mysqli($servername,$username,$password,$dbname);
+    
+    if($conn->connect_error)
+    {
+        die("connection failed:" .$conn->connect_error);
+    }
+    
+   
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve selected options from form
+    if (isset($_POST['reg'])){
+    $reg = $_POST['reg'];
+    $an = $_POST['an'];
+    
+$sql="SELECT * FROM authors WHERE REGIONALDETAILS='$reg' AND AUTHORNAME='$an'";
+$result=$conn->query($sql);
+echo"<table border='1' style='border-collapse:collapse;'>";
+
+if($result->num_rows>0){
+    
+    while($row=$result->fetch_assoc())  {
+            echo '<div class="manuscript-box">';
+            echo '<h4>' . $row["AUTHORID"] . '</h4>';
+            echo '<h2>HISTORICAL DETAILS:' . $row["HISTORICALDETAILS"] . '</h2>';
+            echo '<p>REGIONAL DETAILS:' . $row["REGIONALDETAILS"] . '</p>';
+            echo '</div>';
+    }
+}
+else{
+    echo"<tr><td colspan='2'> No data found</td></tr>";
+}
+echo"</table>";
+}}
+else{
+  $sql="SELECT * FROM authors";
+  $result=$conn->query($sql);
+  echo"<table border='1' style='border-collapse:collapse;'>";
+  
+  if($result->num_rows>0){
+      
+      while($row=$result->fetch_assoc())  {
+        echo '<div class="manuscript-box">';
+        echo '<h4>' . $row["AUTHORID"] . '</h4>';
+        echo '<h2>HISTORICAL DETAILS:' . $row["HISTORICALDETAILS"] . '</h2>';
+        echo '<p>REGIONAL DETAILS:' . $row["REGIONALDETAILS"] . '</p>';
+        echo '</div>';
+      }
+  }
+  else{
+      echo"<tr><td colspan='2'> No data found</td></tr>";
+  }
+  echo"</table>";
+}
+$conn->close();
+?>
+    </body>
+</html>
